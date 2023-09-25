@@ -33,7 +33,7 @@ Untuk dokumentasi API dapat dilihat pada file **payroll-api-doc.md**
 
 atau 
 >dokumentasi API lengkap contoh request dapat dilihat pada link berikut:
-https://payroll.panelogy.me
+[API DOC Via POSTMAN](https://restless-eclipse-319022.postman.co/workspace/New-Team-Workspace~8f640cc4-3d9e-4b84-80fe-6cd0828b51d0/collection/29991483-44423fc1-5011-4611-b710-80e944965c66?action=share&creator=29991483)
 
 Saya ingin menyampaikan terima kasih yang tulus kepada tim IT yang telah melakukan pemeriksaan dalam tes teknis ini, serta tim rekrutmen yang telah memberikan kesempatan ini. Saya juga memohon maaf jika ada hal-hal yang mungkin tidak sesuai, seperti penggunaan framework yang berbeda dengan Laravel. Semoga hasil kerja saya dapat menjadi pertimbangan, dan saya sangat berharap untuk berkontribusi di PT. Behaestex.
 
