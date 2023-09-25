@@ -1,5 +1,5 @@
 # Menggunakan image PHP 7.3 sebagai base image
-FROM php:7.3-apache
+FROM php:8.1-apache
 
 # Install dependensi dan ekstensi PHP yang dibutuhkan untuk CodeIgniter
 RUN apt-get update && apt-get install -y \
