@@ -29,7 +29,7 @@ $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 // API Config
-$config['api_url'] = "https://payroll.panelogy.me/api/";
+$config['api_url'] = $config['base_url'] . "api/";
 $config['api_name'] = "API-KEY";
 $config['api_key'] = "payroll123";
 
@@ -390,7 +390,8 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = BASEPATH.'sessions';
+$config['sess_save_path'] = APPPATH . 'cache/session/';
+// $config['sess_save_path'] = BASEPATH.'sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;

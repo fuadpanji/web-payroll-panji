@@ -185,9 +185,6 @@ class Attendance extends MY_Controller
     
     public function tes($month, $year) {
         $workdays = array();
-        // $type = "CAL_GREGORIAN";
-        // $month = date('n'); // Month ID, 1 through to 12.
-        // $year = date('Y'); // Year in 4 digit 2009 format.
         $day_count = days_in_month($month,$year); // Get the amount of days
         
         //loop through all days
@@ -218,12 +215,6 @@ class Attendance extends MY_Controller
                 }else {
                     if($nwNum < 8) {
                         $total++;
-                        // $so = rand(16,21);
-                        // if($so > 16) {
-                        //     $jatah++;
-                        // }
-                        // if($jatah > 5) $so = 16;
-                        // if($wd<10) $wd = 0 . $wd;
                        $data = [
                            'id_attendance' => uuidv4(),
                            'employee_id' => $employee['employee_id'],
@@ -231,15 +222,10 @@ class Attendance extends MY_Controller
                            'signin_time' => '08:00',
                         ];
                         
-                        // var_dump($data);
-                        //  echo "<br>";
                         $insert = $this->db->insert('attendances',$data);
-                        //  var_dump($insert);
-                        //  echo "<br>";
                     }
                     
                 }
-                // echo $data['employee_id']."-".$data['attendance_date']."-".$dataU['signout_time'].PHP_EOL;
             }
             $total = $total-$nwNum;
             echo $data['employee_id']." done ".$total."<br>";
@@ -251,7 +237,7 @@ class Attendance extends MY_Controller
     }
     
     public function tes2($month, $year) {
-        $this->db->limit(400);
+        $this->db->where("DATE_FORMAT(attendance_date, '%m-%Y') =", "$month-$year");
         $attendance = $this->db->get_where('attendances',["signout_time" => NULL])->result_array();
             $jatah = 1;
         foreach ($attendance as $a) {
@@ -260,7 +246,7 @@ class Attendance extends MY_Controller
             if($so > 16) {
                 $jatah++;
             }
-            if($jatah > 10) $so = 16;
+            if($jatah > 50) $so = 16;
             
            $data = [
                'id_attendance' => $a['id_attendance'],

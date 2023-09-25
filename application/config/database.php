@@ -75,10 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'payroll',
-	'password' => 'nnML2deen8CG3pSP',
+	'hostname' => 'db',
+	'username' => 'root',
+	'password' => 'root',
 	'database' => 'payroll',
+	'port'     => '3306',
+	'socket'   => '/var/run/mysqld/mysqld.sock',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
